@@ -4,6 +4,7 @@ use App\Http\Controllers\gestionEmprunts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,6 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::apiResource("/loans",gestionEmprunts::class);
+Route::apiResource("/loans", gestionEmprunts::class);
 
-// Route::post('/add', 'App\Http\Controllers\gestionEmprunts@add');
+Route::patch('/loans/{id}/return', 'App\Http\Controllers\gestionEmprunts@patchEement');
+
+Route::post('/updateValide/{id}', [gestionEmprunts::class, 'updateValide']);

@@ -18,7 +18,7 @@ return new class extends Migration {
             $table->date('borrowerd_at')->nullable();
             $table->date('due_date')->nullable();
             $table->boolean('returned')->default(false);
-            $table->enum('status', ['active', 'returned', 'overdue'])->default('active');
+            $table->enum('status', ['active', 'returned', 'overdue']);
             $table->timestamps();
 
         });

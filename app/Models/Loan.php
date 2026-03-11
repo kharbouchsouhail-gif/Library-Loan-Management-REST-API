@@ -10,7 +10,15 @@ class Loan extends Model
     use HasFactory;
     protected $fillable = [
         "borrower_name",
-        "borrwer_email",
-        "book_title"
+        "borrower_email",
+        "book_title",
+        "borrowerd_at",
+        "due_date",
+        "returned",
+        "status"
+    ];
+
+    protected $casts = [
+        "returned" => "boolean"
     ];
 }
